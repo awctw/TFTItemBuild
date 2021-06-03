@@ -25,7 +25,7 @@ public class tftController {
         service.insertSpecChampItems(item);
     }
 
-    @Scheduled(fixedRate = 604800)
+    @Scheduled(fixedRate = 604800000)
     public void insertComp() throws IOException {
         Date current = new Date();
         Items item = new Items();
