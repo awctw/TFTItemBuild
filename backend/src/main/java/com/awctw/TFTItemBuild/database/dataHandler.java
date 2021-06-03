@@ -20,6 +20,9 @@ public interface dataHandler {
             "VALUES (#{teamCompName}, #{mainCarry1}, #{mainCarry2}, #{teammate3}, #{teammate4}, #{teammate5}, #{teammate6}, #{teammate7}, #{teammate8})"})
     void insertComp(Items item, String teamCompName, String mainCarry1, String mainCarry2, String teammate3, String teammate4, String teammate5,String teammate6,String teammate7, String teammate8);
 
+    @Delete("DELETE FROM TeamComp")
+    void deleteComp();
+
     @Select("SELECT * FROM Champion")
     List<Champion> getAllChampion();
 

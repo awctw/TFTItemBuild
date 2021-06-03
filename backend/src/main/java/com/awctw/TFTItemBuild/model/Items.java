@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class Items {
+public class Items{
 
     Map<String, ArrayList<String>> map = new LinkedHashMap<>();
     Map<String, ArrayList<String>> specChampsNeededItems = new LinkedHashMap<>();
@@ -68,7 +68,9 @@ public class Items {
 
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(options);
 
         while(listOfComps.hasNext()) {
             System.out.println("Comp:" + listOfComps.next());
@@ -129,7 +131,7 @@ public class Items {
 
     private void writeToFile() {
 
-        File file = new File("data/info.html");
+        File file = new File("src/main/resources/static/info.html");
 
         try (BufferedWriter bf = new BufferedWriter(new FileWriter(file))) {
 
@@ -152,4 +154,5 @@ public class Items {
         parseChampions();
         writeToFile();
     }
+
 }

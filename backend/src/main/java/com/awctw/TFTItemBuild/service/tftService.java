@@ -32,6 +32,7 @@ public class tftService {
     }
 
     public void insertComp(Items item){
+        deleteComp();
         Map<String, ArrayList<String>> map = item.getMap();
 
         Iterator<String> listOfComps = map.keySet().iterator();
@@ -95,4 +96,6 @@ public class tftService {
     }
 
     public List<ChampionItems> getAllChampionItems(){return handler.getAllChampionItems();}
+
+    public void deleteComp(){handler.deleteComp();}
 }
